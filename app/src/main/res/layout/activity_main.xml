@@ -4,31 +4,17 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity"
-    android:id="@+id/main_container">
+    android:id="@+id/main_container"
+    android:background="#dcffc0">
 
-    <TextView android:text="@string/app_announce"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/message_view" />
     <EditText
         android:id="@+id/Number_Input"
         android:inputType="number"
-        android:layout_width="wrap_content"
+        android:layout_width="107dp"
         android:layout_height="wrap_content"
         android:hint="@string/number_input"
-        />
-    <Button
-        android:id="@+id/Button_Push"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_push"
-        />
-    <Button
-        android:id="@+id/Button_Pop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_pop"
-        />
+        android:background="#ffe0b9"
+        android:layout_gravity="center_horizontal" />
     <!--<TextView-->
         <!--android:id="@+id/Stack_Output"-->
         <!--android:layout_width="wrap_content"-->
@@ -40,7 +26,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_quit"
-        />
+        android:background="#ff3f47"
+        android:layout_gravity="right" />
+
+    <Button
+        android:id="@+id/Button_Push"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_push"
+        android:background="#86ff9c" />
+
+    <Button
+        android:id="@+id/Button_Pop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_pop"
+        android:background="#9bb0ff" />
+
+    <TextView android:text="@string/app_announce"
+        android:layout_width="131dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/message_view"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#0b1042" />
 
 
 </LinearLayout>
