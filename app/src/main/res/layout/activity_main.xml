@@ -4,12 +4,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity"
-    >
+    android:background="#e9d5ff">
 
-    <TextView android:text="@string/app_announce"
+    <TextView android:text="CS544 HW1 Stack Application"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        />
+        android:id="@+id/App_Intro"
+        android:textColor="#000a35" />
     <EditText
         android:id="@+id/Number_Input"
         android:inputType="number"
@@ -18,30 +19,36 @@
         android:layout_height="wrap_content"
         android:hint="@string/number_input"
         />
+
     <Button
         android:id="@+id/Button_Push"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_push"
-        />
+        android:background="#2bff77" />
+
     <Button
         android:id="@+id/Button_Pop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_pop"
-        />
-    <TextView
-        android:id="@+id/Stack_Output"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/stack_output"
-        />
+        android:background="#4bd5ff" />
+
     <Button
         android:id="@+id/Button_Quit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_quit"
-        />
+        android:layout_gravity="right"
+        android:background="#ff4143" />
+
+    <TextView
+        android:id="@+id/Stack_Output"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/stack_output"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#000a55" />
 
 
 </LinearLayout>
