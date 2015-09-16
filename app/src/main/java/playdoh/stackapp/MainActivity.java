@@ -2,16 +2,14 @@ package playdoh.stackapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
+public EditText editText;
 
     //Declare Data Model
     private StackDataModel myStack = new StackDataModel();
@@ -32,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Integer inputNumber;
-
+                editText = (EditText) findViewById(R.id.Number_Input);
                 //Deal with non-number inputs
                 try {
                     inputNumber = Integer.parseInt(getInputText());
@@ -44,9 +42,11 @@ public class MainActivity extends AppCompatActivity {
 
                 if (!myStack.push(inputNumber)) {
                     stackIsFull();
+                    editText.getText().clear();
                 } else {
-                    show_message(inputNumber + " is pushed,now stack is "
+                    show_message(inputNumber + " is pushed, now the stack is "
                             + myStack.getStackContent());
+                    editText.getText().clear();
 
                 }
             }
@@ -61,15 +61,15 @@ public class MainActivity extends AppCompatActivity {
                 Integer popped = myStack.pop();
                 if(popped != null){
                    if (myStack.isStackEmpty()){
-                       show_message("Popped:" + popped + "empty");
+                       show_message("Popped: " + popped + ", the stack is empty now.");
                    }
                     else{
-                       show_message("Popped:" + popped + myStack.getStackContent());
+                       show_message("Popped: " + popped + ", the stack is " + myStack.getStackContent());
 
                    }
 
                 }else{
-                    show_message("Poped: null, Stack is already empty");
+                    show_message("Popped: null, the stack is already empty.");
                 }
             }
         });
@@ -92,11 +92,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void invalidInputs(){
-        show_message("Invalid inputs,You have to input a number between 0 and 9");
+        show_message("Invalid input,you have to input a number between 0 and 9.");
     }
 
     private void stackIsFull(){
-        show_message("Stack is full, Now Stack is:" + myStack.getStackContent());
+        show_message("Stack is full, now the stack is: " + myStack.getStackContent());
     }
 
     private void show_message(String message){

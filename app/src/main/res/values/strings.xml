@@ -1,11 +1,10 @@
 <resources>
     <string name="app_name">Stack Application</string>
     <string name="action_settings">Settings</string>
-    <string name="app_announce">Announce here</string>
-    <string name="number_input">Enter here:</string>
+    <string name="app_announce">CPSC 544 StackApp - Team01</string>
+    <string name="number_input">Enter a number here:</string>
     <string name="button_push">Push</string>
     <string name="button_pop">Pop</string>
-    <string name="stack_output">Undefined</string>
     <string name="button_quit">Quit</string>
 
 

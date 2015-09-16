@@ -9,7 +9,7 @@ import java.util.ArrayList;
  */
 public class StackDataModel {
 
-    private ArrayList<Integer> stack_model = new ArrayList<Integer>();
+    private ArrayList<Integer> stack_model = new ArrayList<>();
 
     private int maxIndex() {
 //        if(stack_model.isEmpty()){
@@ -25,12 +25,9 @@ public class StackDataModel {
             return null;
         }
     }
-    //I add limitation in length user can input, which means we may not
-    //need this kind of if statement for push function, Hong
+
     public boolean push(Integer number){
         if(stack_model.size() >= 3){
-            return false;
-        }else if(number > 9 || number < 0) {
             return false;
         }else{
             stack_model.add(stack_model.size(),number);
@@ -50,4 +47,9 @@ public class StackDataModel {
         }
         return "[" + list_content + "]";
     }
+
+    public boolean isStackEmpty(){
+        return stack_model.isEmpty();
+    }
+
 }
