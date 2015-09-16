@@ -9,7 +9,7 @@ import java.util.ArrayList;
  */
 public class StackDataModel {
 
-    private ArrayList<Integer> stack_model;
+    private ArrayList<Integer> stack_model = new ArrayList<Integer>();
 
     private int maxIndex() {
 //        if(stack_model.isEmpty()){

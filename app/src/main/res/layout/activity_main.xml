@@ -4,12 +4,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity"
-    >
+    android:id="@+id/main_container">
 
     <TextView android:text="@string/app_announce"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        />
+        android:id="@+id/message_view" />
     <EditText
         android:id="@+id/Number_Input"
         android:inputType="number"
@@ -29,12 +29,12 @@
         android:layout_height="wrap_content"
         android:text="@string/button_pop"
         />
-    <TextView
-        android:id="@+id/Stack_Output"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/stack_output"
-        />
+    <!--<TextView-->
+        <!--android:id="@+id/Stack_Output"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/stack_output"-->
+        <!--/>-->
     <Button
         android:id="@+id/Button_Quit"
         android:layout_width="wrap_content"

@@ -6,44 +6,96 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    //Declare Data Model
+    private StackDataModel myStack = new StackDataModel();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button button_quit = (Button) findViewById(R.id.Button_Quit);
-        button_quit.setOnClickListener(new View.OnClickListener() {
+        listenButtonExit();
+        listenButtonPop();
+        listenButtonPush();
+    }
+
+    public void listenButtonPush(){
+        Button pushButton = (Button) findViewById(R.id.Button_Push);
+        pushButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Integer inputNumber;
+
+                //Deal with non-number inputs
+                try {
+                    inputNumber = Integer.parseInt(getInputText());
+                } catch (NumberFormatException nfe) {
+                    //Invalid Inputs!
+                    invalidInputs();
+                    return;
+                }
+                //Deal with out of range inputs
+                if (inputNumber < 0 || inputNumber > 9) {
+                    invalidInputs();
+                    return;
+                }
+
+                if (!myStack.push(inputNumber)) {
+                    stackIsFull();
+                } else {
+                    show_message(inputNumber + " is pushed,now stack is "
+                            + myStack.getStackContent());
+                }
+            }
+        });
+    }
+
+    public void listenButtonPop(){
+        Button popButton = (Button) findViewById(R.id.Button_Pop);
+        popButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Integer poped = myStack.pop();
+                if(poped != null){
+                    show_message("Poped: " + poped + "; Now Stack is " + myStack.getStackContent());
+                }else{
+                    show_message("Poped: null, Stack is already empty");
+                }
+            }
+        });
+    }
+
+    public void listenButtonExit(){
+        Button exitButton = (Button) findViewById(R.id.Button_Quit);
+        exitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
                 System.exit(0);
-
             }
         });
-
-    }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+    private String getInputText(){
+        EditText inputView = (EditText) findViewById(R.id.Number_Input);
+        return inputView.getText().toString();
+    }
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+    private void invalidInputs(){
+        show_message("Invalid inputs,You have to input a number between 0 and 9");
+    }
 
-        return super.onOptionsItemSelected(item);
+    private void stackIsFull(){
+        show_message("Stack is full, Now Stack is:" + myStack.getStackContent());
+    }
+
+    private void show_message(String message){
+        TextView messageView = (TextView) findViewById(R.id.message_view);
+        messageView.setText(message);
     }
 }
