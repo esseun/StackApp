@@ -12,6 +12,7 @@
         android:inputType="number"
         android:layout_width="107dp"
         android:layout_height="wrap_content"
+        android:maxLength="1"
         android:hint="@string/number_input"
         android:background="#ffe0b9"
         android:layout_gravity="center_horizontal" />

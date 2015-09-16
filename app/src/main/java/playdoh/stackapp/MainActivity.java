@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import java.util.ArrayList;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,17 +41,13 @@ public class MainActivity extends AppCompatActivity {
                     invalidInputs();
                     return;
                 }
-                //Deal with out of range inputs
-                if (inputNumber < 0 || inputNumber > 9) {
-                    invalidInputs();
-                    return;
-                }
 
                 if (!myStack.push(inputNumber)) {
                     stackIsFull();
                 } else {
                     show_message(inputNumber + " is pushed,now stack is "
                             + myStack.getStackContent());
+
                 }
             }
         });
@@ -60,9 +58,16 @@ public class MainActivity extends AppCompatActivity {
         popButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Integer poped = myStack.pop();
-                if(poped != null){
-                    show_message("Poped: " + poped + "; Now Stack is " + myStack.getStackContent());
+                Integer popped = myStack.pop();
+                if(popped != null){
+                   if (myStack.isStackEmpty()){
+                       show_message("Popped:" + popped + "empty");
+                   }
+                    else{
+                       show_message("Popped:" + popped + myStack.getStackContent());
+
+                   }
+
                 }else{
                     show_message("Poped: null, Stack is already empty");
                 }
