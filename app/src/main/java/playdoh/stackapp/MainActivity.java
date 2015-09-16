@@ -14,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        //This is for creating Quit_button function
         Button button_quit = (Button) findViewById(R.id.Button_Quit);
         button_quit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -23,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
+        // 'Til here
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
