@@ -25,7 +25,8 @@ public class StackDataModel {
             return null;
         }
     }
-
+    //I add limitation in length user can input, which means we may not
+    //need this kind of if statement for push function, Hong
     public boolean push(Integer number){
         if(stack_model.size() >= 3){
             return false;
