@@ -41,8 +41,7 @@ public class StackDataModel {
             if(i == 0){
                 list_content += stack_model.get(i).toString();
             }else{
-                list_content += " ";
-                list_content += stack_model.get(i).toString();
+                list_content += " " + stack_model.get(i).toString();
             }
         }
         return "[" + list_content + "]";

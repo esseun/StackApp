@@ -9,7 +9,9 @@ import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
-public EditText editText;
+
+    //Input field text - wiping after clicking push button
+    public EditText editText;
 
     //Declare Data Model
     private StackDataModel myStack = new StackDataModel();
@@ -27,10 +29,12 @@ public EditText editText;
     public void listenButtonPush(){
         Button pushButton = (Button) findViewById(R.id.Button_Push);
         pushButton.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 Integer inputNumber;
                 editText = (EditText) findViewById(R.id.Number_Input);
+
                 //Deal with non-number inputs
                 try {
                     inputNumber = Integer.parseInt(getInputText());
@@ -42,10 +46,12 @@ public EditText editText;
 
                 if (!myStack.push(inputNumber)) {
                     stackIsFull();
+                    //Clear input field
                     editText.getText().clear();
                 } else {
-                    show_message(inputNumber + " is pushed, now the stack is "
-                            + myStack.getStackContent());
+                    show_message(inputNumber + " is pushed.");
+                    show_stack("Stack: " + myStack.getStackContent());
+                    //Clear input field
                     editText.getText().clear();
 
                 }
@@ -61,15 +67,17 @@ public EditText editText;
                 Integer popped = myStack.pop();
                 if(popped != null){
                    if (myStack.isStackEmpty()){
-                       show_message("Popped: " + popped + ", the stack is empty now.");
+                       show_message("Popped: " + popped + ".");
+                       show_stack("Stack: Empty.");
                    }
                     else{
-                       show_message("Popped: " + popped + ", the stack is " + myStack.getStackContent());
-
+                       show_message("Popped: " + popped + ".");
+                        show_stack("Stack: " + myStack.getStackContent());
                    }
 
                 }else{
-                    show_message("Popped: null, the stack is already empty.");
+                    show_message("Popped: null");
+                    show_stack("Stack: Empty.");
                 }
             }
         });
@@ -96,11 +104,17 @@ public EditText editText;
     }
 
     private void stackIsFull(){
-        show_message("Stack is full, now the stack is: " + myStack.getStackContent());
+        show_message("Stack is full!");
     }
 
     private void show_message(String message){
         TextView messageView = (TextView) findViewById(R.id.message_view);
         messageView.setText(message);
+    }
+
+    //Separating input value and stack content
+    private void show_stack(String message){
+        TextView messageStackView = (TextView) findViewById(R.id.stack_view);
+        messageStackView.setText(message);
     }
 }
