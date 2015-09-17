@@ -1,12 +1,13 @@
 package playdoh.stackapp;
 
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.media.MediaPlayer;
+import android.widget.ViewFlipper;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,9 +29,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void listenButtonPush() {
         Button pushButton = (Button)findViewById(R.id.Button_Push);
-
         final MediaPlayer mp_push = MediaPlayer.create(this, R.raw.yeahbuddy_mp3);
         final MediaPlayer mp_pop = MediaPlayer.create(this, R.raw.lwbaby_mp3);
+
+        final ViewFlipper vf = (ViewFlipper)findViewById(R.id.viewFlipper);
 
         pushButton.setOnClickListener(new View.OnClickListener() {
 
@@ -39,33 +41,27 @@ public class MainActivity extends AppCompatActivity {
                 Integer inputNumber;
                 editText = (EditText)findViewById(R.id.Number_Input);
 
-
                 //Deal with non-number inputs
                 try {
                     inputNumber = Integer.parseInt(getInputText());
                 } catch (NumberFormatException nfe) {
                     //Invalid Inputs!
-                    mp_pop.start();
                     invalidInputs();
                     return;
                 }
-
                 if (!myStack.push(inputNumber)) {
                     stackIsFull();
-                    mp_pop.start();
                     //Clear input field
+                    vf.showNext();
+
                     editText.getText().clear();
 
                 } else {
-                    mp_push.start();
-
                     show_message(inputNumber + " is pushed.");
                     show_stack("Stack: " + myStack.getStackContent());
 
                     //Clear input field
                     editText.getText().clear();
-
-
                 }
             }
         });
@@ -73,8 +69,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void listenButtonPop() {
         Button popButton = (Button) findViewById(R.id.Button_Pop);
-        final MediaPlayer mp_push = MediaPlayer.create(this, R.raw.yeahbuddy_mp3);
-        final MediaPlayer mp_pop = MediaPlayer.create(this, R.raw.lwbaby_mp3);
 
         popButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,17 +76,14 @@ public class MainActivity extends AppCompatActivity {
                 Integer popped = myStack.pop();
                 if (popped != null) {
                     if (myStack.isStackEmpty()) {
-                        mp_pop.start();
                        show_message("Popped: " + popped + ".");
                        show_stack("Stack: Empty.");
 
                    } else {
-                        mp_pop.start();
                        show_message("Popped: " + popped + ".");
                        show_stack("Stack: " + myStack.getStackContent());
                    }
                 } else {
-                    mp_push.start();
                     show_message("Popped: null");
                     show_stack("Stack: Empty.");
                 }
@@ -134,7 +125,6 @@ public class MainActivity extends AppCompatActivity {
         TextView messageStackView = (TextView) findViewById(R.id.stack_view);
         messageStackView.setText(message);
     }
-
 
 }
 
