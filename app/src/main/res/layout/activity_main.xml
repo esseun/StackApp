@@ -27,10 +27,9 @@
 
     <Button
         android:id="@+id/Button_Push"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_push"
-        android:background="#86ff9c" />
+        android:layout_width="87.5dip"
+        android:layout_height="87.5dip"
+        android:background="@drawable/ronnie" />
 
     <Button
         android:id="@+id/Button_Pop"
