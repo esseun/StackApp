@@ -18,18 +18,18 @@ public class StackDataModel {
         return stack_model.size() - 1;
     }
 
-    public Integer pop(){
-        if(!stack_model.isEmpty()){
+    public Integer pop() {
+        if (!stack_model.isEmpty()) {
             return stack_model.remove(this.maxIndex());
-        }else{
+        } else {
             return null;
         }
     }
 
-    public boolean push(Integer number){
-        if(stack_model.size() >= 3){
+    public boolean push(Integer number) {
+        if (stack_model.size() >= 3) {
             return false;
-        }else{
+        } else {
             stack_model.add(stack_model.size(),number);
             return true;
         }
@@ -37,10 +37,10 @@ public class StackDataModel {
 
     public String getStackContent(){
         String list_content = "";
-        for(int i=0; i<stack_model.size(); i++){
-            if(i == 0){
+        for (int i = 0; i < stack_model.size(); i++) {
+            if (i == 0) {
                 list_content += stack_model.get(i).toString();
-            }else{
+            } else {
                 list_content += " " + stack_model.get(i).toString();
             }
         }

@@ -26,14 +26,14 @@ public class MainActivity extends AppCompatActivity {
         listenButtonPush();
     }
 
-    public void listenButtonPush(){
-        Button pushButton = (Button) findViewById(R.id.Button_Push);
+    public void listenButtonPush() {
+        Button pushButton = (Button)findViewById(R.id.Button_Push);
         pushButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Integer inputNumber;
-                editText = (EditText) findViewById(R.id.Number_Input);
+                editText = (EditText)findViewById(R.id.Number_Input);
 
                 //Deal with non-number inputs
                 try {
@@ -59,23 +59,21 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void listenButtonPop(){
+    public void listenButtonPop() {
         Button popButton = (Button) findViewById(R.id.Button_Pop);
         popButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Integer popped = myStack.pop();
-                if(popped != null){
-                   if (myStack.isStackEmpty()){
+                if (popped != null) {
+                   if (myStack.isStackEmpty()) {
                        show_message("Popped: " + popped + ".");
                        show_stack("Stack: Empty.");
-                   }
-                    else{
+                   } else {
                        show_message("Popped: " + popped + ".");
                         show_stack("Stack: " + myStack.getStackContent());
                    }
-
-                }else{
+                } else {
                     show_message("Popped: null");
                     show_stack("Stack: Empty.");
                 }
@@ -83,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void listenButtonExit(){
+    public void listenButtonExit() {
         Button exitButton = (Button) findViewById(R.id.Button_Quit);
         exitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,12 +92,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private String getInputText(){
+    private String getInputText() {
         EditText inputView = (EditText) findViewById(R.id.Number_Input);
         return inputView.getText().toString();
     }
 
-    private void invalidInputs(){
+    private void invalidInputs() {
         show_message("Invalid input,you have to input a number between 0 and 9.");
     }
 
@@ -113,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //Separating input value and stack content
-    private void show_stack(String message){
+    private void show_stack(String message) {
         TextView messageStackView = (TextView) findViewById(R.id.stack_view);
         messageStackView.setText(message);
     }
