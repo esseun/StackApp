@@ -42,9 +42,16 @@
     <TextView android:text="@string/app_announce"
         android:layout_width="131dp"
         android:layout_height="wrap_content"
-        android:id="@+id/message_view"
         android:layout_gravity="center_horizontal"
+        android:id="@+id/message_view"
         android:textColor="#0b1042" />
 
+    <TextView
+        android:id="@+id/stack_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#0b1042"
+        />
 
 </LinearLayout>
