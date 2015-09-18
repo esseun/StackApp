@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.ViewFlipper;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
         final MediaPlayer mp_push = MediaPlayer.create(this, R.raw.yeahbuddy_mp3);
         final MediaPlayer mp_pop = MediaPlayer.create(this, R.raw.lwbaby_mp3);
 
-        final ViewFlipper vf = (ViewFlipper)findViewById(R.id.viewFlipper);
 
         pushButton.setOnClickListener(new View.OnClickListener() {
 
@@ -47,19 +46,19 @@ public class MainActivity extends AppCompatActivity {
                 } catch (NumberFormatException nfe) {
                     //Invalid Inputs!
                     invalidInputs();
+                    mp_push.start();
                     return;
                 }
                 if (!myStack.push(inputNumber)) {
                     stackIsFull();
                     //Clear input field
-                    vf.showNext();
-
-                    editText.getText().clear();
+                mp_pop.start();
+                editText.getText().clear();
 
                 } else {
                     show_message(inputNumber + " is pushed.");
                     show_stack("Stack: " + myStack.getStackContent());
-
+                    mp_push.start();
                     //Clear input field
                     editText.getText().clear();
                 }
