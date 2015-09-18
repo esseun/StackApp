@@ -7,6 +7,19 @@
     android:id="@+id/main_container"
     android:background="#dcffc0">
 
+    <ViewFlipper
+        android:id="@+id/viewFlipper"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        >
+
+
     <EditText
         android:id="@+id/Number_Input"
         android:inputType="number"
@@ -27,9 +40,10 @@
 
     <Button
         android:id="@+id/Button_Push"
-        android:layout_width="87.5dip"
-        android:layout_height="87.5dip"
-        android:background="@drawable/ronnie" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_push"
+        android:background="#86ff9c" />
 
     <Button
         android:id="@+id/Button_Pop"
@@ -52,5 +66,237 @@
         android:layout_gravity="center_horizontal"
         android:textColor="#0b1042"
         />
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        >
+
+        <EditText
+            android:id="@id/Number_Input"
+            android:inputType="number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="1"
+            android:hint="@string/number_input"
+            android:background="#ffe0b9"
+            android:layout_gravity="center_horizontal" />
+
+        <Button
+            android:id="@id/Button_Quit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_quit"
+            android:background="#ff3f47"
+            android:layout_gravity="end" />
+
+        <Button
+            android:id="@id/Button_Push"
+            android:layout_width="87.5dip"
+            android:layout_height="87.5dip"
+            android:background="@drawable/ronnie" />
+
+        <Button
+            android:id="@id/Button_Pop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_pop"
+            android:background="#9bb0ff" />
+
+        <TextView android:text="@string/app_announce"
+            android:layout_width="131dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:id="@id/message_view"
+            android:textColor="#0b1042" />
+
+        <TextView
+            android:id="@id/stack_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#0b1042"
+            />
+
+    </LinearLayout>
+
+
+    </ViewFlipper>
+
 
 </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

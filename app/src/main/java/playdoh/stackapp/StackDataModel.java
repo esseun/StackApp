@@ -50,5 +50,5 @@ public class StackDataModel {
     public boolean isStackEmpty(){
         return stack_model.isEmpty();
     }
-
+    public boolean isStackEqual() { return stack_model.equals("[7 7 7]");}
 }
