@@ -19,23 +19,31 @@
 
     <Button
         android:id="@+id/Button_Quit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="90dp"
+        android:layout_height="45dp"
         android:text="@string/button_quit"
         android:background="#ff3f47"
-        android:layout_gravity="end" />
+        android:layout_gravity="right"
+        android:allowUndo="true" />
+
+    <Button
+        android:layout_width="90dp"
+        android:layout_height="45dp"
+        android:text="Help"
+        android:id="@+id/button_help"
+        android:layout_gravity="right" />
 
     <Button
         android:id="@+id/Button_Push"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
         android:text="@string/button_push"
         android:background="#86ff9c" />
 
     <Button
         android:id="@+id/Button_Pop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
         android:text="@string/button_pop"
         android:background="#9bb0ff" />
 

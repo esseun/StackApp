@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:id="@+id/popup_layout"
+    android:layout_height="match_parent">
+
+    <!-- Put the whole widgets in a scroll view to accommodate different
+      size of our Help Document -->
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <!-- Scroll view can host only one child, so... -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Hi, This is just a few test messages.
+                Make this message to be long enough to test if it accommodate well.
+                Make this message to be long enough to test if it accommodate well.
+                Make this message to be long enough to test if it accommodate well.
+                Make this message to be long enough to test if it accommodate well.
+                Make this message to be long enough to test if it accommodate well.
+                Make this message to be long enough to test if it accommodate well.
+                Make this message to be long enough to test if it accommodate well.
+                Make this message to be long enough to test if it accommodate well.
+                Make this message to be long enough to test if it accommodate well.
+                Make this message to be long enough to test if it accommodate well.
+                Make this message to be long enough to test if it accommodate well.
+                Make this message to be long enough to test if it accommodate well.
+                Make this message to be long enough to test if it accommodate well.
+                Make this message to be long enough to test if it accommodate well.
+                Make this message to be long enough to test if it accommodate well.
+                " />
+
+            <Button
+                android:id="@+id/Popup_close_button"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="close" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

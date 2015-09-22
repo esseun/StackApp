@@ -1,11 +1,13 @@
 package playdoh.stackapp;
 
+import android.app.Activity;
+import android.graphics.Point;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.*;
+import android.view.*;
+import android.content.Context;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -24,6 +26,48 @@ public class MainActivity extends AppCompatActivity {
         listenButtonExit();
         listenButtonPop();
         listenButtonPush();
+        listenButtonHelp();
+    }
+
+    public void listenButtonHelp(){
+        Button helpButton = (Button) findViewById(R.id.button_help);
+        helpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View nilArg) {
+
+                //Pop up a window
+                Point anchor = new Point(0,0);
+                showPopup(MainActivity.this, anchor);
+            }
+        });
+    }
+
+    private void showPopup(final Activity context, Point p) {
+        // Inflate the popup_layout.xml
+        LinearLayout viewGroup = (LinearLayout) context.findViewById(R.id.popup_layout);
+        LayoutInflater layoutInflater = (LayoutInflater) context
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View layout = layoutInflater.inflate(R.layout.popup_layout, viewGroup);
+
+        // Create the PopupWindow
+        final PopupWindow popup = new PopupWindow(context);
+        popup.setContentView(layout);
+        popup.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
+        popup.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
+        popup.setFocusable(true);
+
+        // Display
+        popup.showAtLocation(layout, Gravity.CENTER, 0, 0);
+
+        // Gett a reference to Close button, and close the popup when clicked.
+        Button close = (Button) layout.findViewById(R.id.Popup_close_button);
+        close.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                popup.dismiss();
+            }
+        });
     }
 
     public void listenButtonPush() {
