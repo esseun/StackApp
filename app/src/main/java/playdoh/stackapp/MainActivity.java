@@ -1,6 +1,7 @@
 package playdoh.stackapp;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.graphics.Point;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         listenButtonPop();
         listenButtonPush();
         listenButtonHelp();
+
     }
 
     public void listenButtonHelp(){
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
                 //Pop up a window
                 Point anchor = new Point(0,0);
+
                 showPopup(MainActivity.this, anchor);
             }
         });

@@ -17,27 +17,14 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView1"
+                android:id="@+id/User_Manual"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Hi, This is just a few test messages.
-                Make this message to be long enough to test if it accommodate well.
-                Make this message to be long enough to test if it accommodate well.
-                Make this message to be long enough to test if it accommodate well.
-                Make this message to be long enough to test if it accommodate well.
-                Make this message to be long enough to test if it accommodate well.
-                Make this message to be long enough to test if it accommodate well.
-                Make this message to be long enough to test if it accommodate well.
-                Make this message to be long enough to test if it accommodate well.
-                Make this message to be long enough to test if it accommodate well.
-                Make this message to be long enough to test if it accommodate well.
-                Make this message to be long enough to test if it accommodate well.
-                Make this message to be long enough to test if it accommodate well.
-                Make this message to be long enough to test if it accommodate well.
-                Make this message to be long enough to test if it accommodate well.
-                Make this message to be long enough to test if it accommodate well.
-                " />
+                android:text="@string/manual"
+                android:textSize="14dp"
+                android:textColor="#FFFFFF"
+                />
 
             <Button
                 android:id="@+id/Popup_close_button"

@@ -6,6 +6,40 @@
     <string name="button_push">Push</string>
     <string name="button_pop">Pop</string>
     <string name="button_quit">Quit</string>
+    <string name="manual">StackApp User Manual\n\n
+Push Function –\n\n
+Input number on the top of the stack:\n
+1. Click on the edit text field.\n
+2. Key in a number from 0 to 9.\n
+3. Click on Push button.\n
+For the push function, the system displays an error message while the stack is full (3 numbers in the stack) or if input type is out of defined range.\n\n
 
+Push Button Scenario:\n\n
+1. Click on the edit text field.\n
+2. Click on 5 button on number pad.\n
+3. Click on Push button.\n
+4. The application returns: 5 is pushed. Stack: [5]\n
+5. Click on the edit text field.\n
+6. Click on 7 button on number pad.\n
+7. Click on Push button.\n
+8. The application returns: 7 is pushed. Stack: [5 7]\n\n
+
+Pop Function –\n\n
+Pop out the number on the top of the stack:\n
+1. Click on the Pop button.\n
+For the pop function, the system displays error messages while the stack is empty.\n\n
+
+Pop Button Scenario:\n\n
+	(Continue on Push Button Scenario)\n
+1. The system returns: 7 is pushed. Stack: [5 7]\n
+2. Click on Pop button.\n
+3. The system returns: Popped: 7. Stack: [5]\n
+4. Click on Pop button.\n
+5. The system returns: Popped: 5. Stack: Empty.\n\n
+
+Quit Function –\n\n
+Terminate the Stack application and return to the desktop.\n
+	1. Click on the Quit button.\n
+</string>
 
 </resources>
